@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BusinessPage } from '../business/business'
 
 /**
  * Generated class for the DiscoverPage page.
@@ -23,5 +24,7 @@ export class DiscoverPage {
     console.log('ionViewDidLoad DiscoverPage');
   }
 
-
+  public openBusinessPage() {
+    this.navCtrl.push(BusinessPage)
+  }
 }
