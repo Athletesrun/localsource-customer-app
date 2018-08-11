@@ -7,12 +7,61 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>search</ion-title>
+    <ion-title>Search</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchInput" placeholder="Search for a business or product" class="searchBar" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-grid *ngIf="!searching">
+      <ion-row>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Restaurant</button>
+        </ion-col>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Fashion</button>
+        </ion-col>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Cafe's</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Groceries</button>
+        </ion-col>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Tech</button>
+        </ion-col>
+        <ion-col col-4>
+          <button round="true" full="true" ion-button>Entertainment</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <ion-list *ngIf="searching">
+    <ion-item *ngFor="let item of searchItems">
+      <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{ item.image }}">
+          </ion-avatar>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+        </ion-item>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!searching">
+      <ion-item *ngFor="let item of searchHistory">
+        <ion-card>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="{{ item.image }}">
+            </ion-avatar>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+          </ion-item>
+        </ion-card>
+      </ion-item>
+    </ion-list>
 </ion-content>
