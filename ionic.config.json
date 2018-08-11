@@ -1,0 +1,8 @@
+{
+  "name": "localsource-customer-app2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "55e05165"
+}
