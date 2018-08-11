@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { BusinessPage } from '../business/business';
+import { MapPage } from '../map/map';
+
 /**
  * Generated class for the SearchPage page.
  *
@@ -17,7 +20,16 @@ export class SearchPage {
 
   private searching: boolean = false;
 
-  public searchItems = [
+  public searchSuggestions: string[] = [
+    'Restaurant',
+    'Fashion',
+    'Cafe\'s',
+    'Groceries',
+    'Tech',
+    'Entertainment'
+  ]
+
+  public searchResults: object[] = [
     {
       image: "assets/imgs/logo.png",
       name: "Ice Cream Bro's",
@@ -36,14 +48,41 @@ export class SearchPage {
   public searchInput: string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.searchHistory);
   }
 
-  getItems(event) {
+  public getSearchResults() {
+    return this.searchResults;
+  }
+
+  public runSearch(event) {
+    console.log("run");
     if(this.searchInput.length === 0) {
       this.searching = false;
     } else {
       this.searching = true;
     }
+  }
+
+  public getSearchHistory() {
+    return this.searchHistory;
+  }
+
+  public openBusinessPage() {
+    this.navCtrl.push(BusinessPage);
+  }
+
+  public getSuggestion(index) {
+    return this.searchSuggestions[index];
+  }
+
+  public searchItem(item) {
+    this.searching = true;
+    this.searchInput = item;
+  }
+
+  public viewResultsOnMap() {
+    this.navCtrl.push(MapPage)
   }
 
 }

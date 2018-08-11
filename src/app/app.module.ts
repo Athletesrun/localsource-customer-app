@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { BusinessPage } from '../pages/business/business';
+import { MapPage } from '../pages/map/map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     SearchPage,
     DiscoverPage,
-    BusinessPage
+    BusinessPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     SearchPage,
     DiscoverPage,
-    BusinessPage
+    BusinessPage,
+    MapPage
   ],
   providers: [
     StatusBar,

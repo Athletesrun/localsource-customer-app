@@ -13,46 +13,57 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchInput" placeholder="Search for a business or product" class="searchBar" (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-grid *ngIf="!searching">
-      <ion-row>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Restaurant</button>
-        </ion-col>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Fashion</button>
-        </ion-col>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Cafe's</button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Groceries</button>
-        </ion-col>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Tech</button>
-        </ion-col>
-        <ion-col col-4>
-          <button round="true" full="true" ion-button>Entertainment</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-searchbar [(ngModel)]="searchInput" placeholder="Search for a business or product" class="searchBar" (ionInput)="runSearch($event)"></ion-searchbar>
+
+
+  <!-- View results on Map Button -->
+  <button ion-button *ngIf="searching" round="true" style="margin-left: 5%; width: 90%;" (click)="viewResultsOnMap()">View Results on Map</button>
+  <!-- Search Results -->
   <ion-list *ngIf="searching">
-    <ion-item *ngFor="let item of searchItems">
-      <ion-card>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="{{ item.image }}">
-          </ion-avatar>
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-        </ion-item>
-      </ion-card>
-    </ion-item>
-  </ion-list>
+      <ion-item *ngFor="let item of getSearchResults()" (click)="openBusinessPage()">
+        <ion-card>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="{{ item.image }}">
+            </ion-avatar>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+          </ion-item>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  
+
+  <!-- Search Suggestions -->
+  <ion-grid *ngIf="!searching">
+    <ion-row>
+      <ion-col col-4 (click)="searchItem(getSuggestion(0))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(0) }}</button>
+      </ion-col>
+      <ion-col col-4 (click)="searchItem(getSuggestion(1))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(1) }}</button>
+      </ion-col>
+      <ion-col col-4 (click)="searchItem(getSuggestion(2))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(2) }}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 (click)="searchItem(getSuggestion(3))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(3) }}</button>
+      </ion-col>
+      <ion-col col-4 (click)="searchItem(getSuggestion(4))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(4) }}</button>
+      </ion-col>
+      <ion-col col-4 (click)="searchItem(getSuggestion(5))">
+        <button round="true" full="true" ion-button>{{ getSuggestion(5) }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+  <!-- Search History -->
   <ion-list *ngIf="!searching">
-      <ion-item *ngFor="let item of searchHistory">
+      <ion-item *ngFor="let item of searchHistory" (click)="openBusinessPage()">
         <ion-card>
           <ion-item>
             <ion-avatar item-start>
