@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Config } from 'ionic-angular';
 
 import { ProfilePage } from '../profile/profile';
 import { BusinessPage } from '../business/business'
 import { SearchPage } from '../search/search';
+
+import { FadeTransition } from '../../transitions/fadeTransition';
 
 /**
  * Generated class for the DiscoverPage page.
@@ -19,12 +21,8 @@ import { SearchPage } from '../search/search';
 })
 export class DiscoverPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public config: Config) {
 
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DiscoverPage');
   }
 
   public openBusinessPage() {

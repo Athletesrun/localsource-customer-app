@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Config } from 'ionic-angular';
 
 import { BusinessPage } from '../business/business';
 import { MapPage } from '../map/map';
@@ -18,7 +18,11 @@ import { MapPage } from '../map/map';
 })
 export class SearchPage {
 
+  private buttonIsEnabled: boolean = false;
+
   private searching: boolean = false;
+
+  public defaultPageTransition: string = '';
 
   public searchSuggestions: string[] = [
     'Restaurant',
@@ -54,8 +58,17 @@ export class SearchPage {
 
   public searchInput: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public config: Config) {
     console.log(this.searchHistory);
+  }
+
+  ionViewCanEnter() {
+    this.defaultPageTransition = this.config.get('pageTransition');
+    this.config.set('pageTransition', 'wp-transition');
+  }
+  
+  ionViewDidLeave() {
+    this.config.set('pageTransition', this.defaultPageTransition);
   }
 
   public getSearchResults() {
@@ -65,8 +78,10 @@ export class SearchPage {
   public runSearch(event) {
     console.log("run");
     if(this.searchInput.length === 0) {
+      this.buttonIsEnabled = false;
       this.searching = false;
     } else {
+      this.buttonIsEnabled = true;
       this.searching = true;
     }
   }
@@ -86,10 +101,20 @@ export class SearchPage {
   public searchItem(item) {
     this.searching = true;
     this.searchInput = item;
+    this.buttonIsEnabled = true;
   }
 
   public viewResultsOnMap() {
-    this.navCtrl.push(MapPage, this.searchResults);
+    if(this.searching) {
+      this.navCtrl.push(MapPage, {
+        locations: this.searchResults,
+        searchQuery: this.searchInput
+      });
+    }
+  }
+
+  public exitSearch() {
+    this.navCtrl.pop();
   }
 
 }
