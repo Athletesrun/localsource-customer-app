@@ -66,10 +66,24 @@ export class SearchPage {
     // }
     {
       name: "Haven",
-      image: "",
+      image: "havenClothing.png",
       description: "Home goods store in Boulder, CO",
       latitude: 40.018993,
-      longtitude: -105.273721
+      longitude: -105.273721
+    },
+    {
+      name: "Cedar & Hyde Mercantile",
+      image: "cedar_store.jpg",
+      description: "Offbeat family-run shop featuring an eclectic array of high-quality clothing, home decor & gifts.",
+      latitude: 40.017664,
+      longitude: -105.282971
+    },
+    {
+      name: "Two Sole Sisters",
+      image: "two_soles.jpg",
+      description: "This shabby-chic boutique selling women's shoes also features jewelry, handbags & accessories.",
+      latitude: 40.019417,
+      longtitude: -105.273219
     }
   ];
 

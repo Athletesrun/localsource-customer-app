@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import { Map } from 'mapbox-gl';
-import { BusinessPage } from '../business/business';
+import { Business2Page } from '../business2/business2';
 
 /**
  * Generated class for the MapPage page.
@@ -65,7 +65,7 @@ export class MapPage {
     });
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmVud2luZ2VydGVyIiwiYSI6ImNqZHFrZXdkOTB0MWMzM28zeDkweDY3cXIifQ.5ZkyFK5qfMvxJhcL3fePow';
     this.map = new mapboxgl.Map({
-      center: [-105.24730962508563, 40.01903255139988],
+      center: [-105.273721, 40.018993],
       style: 'mapbox://styles/benwingerter/cjkq0c9fd2c0r2so7yvfwnlnk',
       zoom: 16,
       pitch: 0,
@@ -103,6 +103,10 @@ export class MapPage {
           "icon": "monument"
         }
       };
+
+      this.map.on('load', function() {
+        console.log("james");
+      });
 
       this.locations.forEach((location: any) => {
         if(location.latitude && location.longitude) {
@@ -145,7 +149,7 @@ export class MapPage {
   }
 
   clickMarker($event) {
-    this.navCtrl.push(BusinessPage);
+    this.navCtrl.push(Business2Page);
   }
 
 }
