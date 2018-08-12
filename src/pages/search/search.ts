@@ -25,6 +25,19 @@ export class SearchPage {
   public defaultPageTransition: string = '';
 
   public searchSuggestions: string[] = [
+    'RESTAURANTS',
+    'FASHION',
+    'COFFEE',
+    'GROCERIES',
+    'TECH',
+    'FITNESS',
+    'MUSIC',
+    'HOME & GARDEN',
+    'CANNABIS',
+    'ART & GIFT'
+  ];
+
+  public searchSuggestionsLC: string[] = [
     'Restaurants',
     'Fashion',
     'Coffee',
@@ -35,20 +48,27 @@ export class SearchPage {
     'Home & Garden',
     'Cannabis',
     'Art & Gift'
-  ]
+  ];
 
   public searchResults: object[] = [
+    // {
+    //   image: "assets/imgs/sanitas.png",
+    //   name: "Sanitas Brewing Co.",
+    //   description: "Handmade beers, crafted with organic and local ingredients",
+    //   latitude: 40.021483935126376,
+    //   longitude: -105.24737836327405
+    // },
+    // {
+    //   image: "assets/imgs/logo.png",
+    //   name: "Ice Cream Bro's",
+    //   description: "Tasty local ice cream"
+    // }
     {
-      image: "assets/imgs/sanitas.png",
-      name: "Sanitas Brewing Co.",
-      description: "Handmade beers, crafted with organic and local ingredients",
-      latitude: 40.021483935126376,
-      longitude: -105.24737836327405
-    },
-    {
-      image: "assets/imgs/logo.png",
-      name: "Ice Cream Bro's",
-      description: "Tasty local ice cream"
+      name: "Haven",
+      image: "",
+      description: "Home goods store in Boulder, CO",
+      latitude: 40.018993,
+      longtitude: -105.273721
     }
   ];
 
@@ -99,7 +119,7 @@ export class SearchPage {
   }
 
   public getSuggestion(index) {
-    return this.searchSuggestions[index];
+    return this.searchSuggestionsLC[index];
   }
 
   public searchItem(item) {
