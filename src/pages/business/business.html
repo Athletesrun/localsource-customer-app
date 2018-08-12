@@ -26,10 +26,10 @@
     <ion-grid>
         <ion-row style="font-size:20px">
             <ion-col col-1 style="margin-right:5px">
-              <ion-icon name="ios-add-circle-outline" style="color:blue"></ion-icon>
+              <ion-icon name="ios-add-circle-outline" (click)="customerServiceIncrement($event)"></ion-icon>
             </ion-col>
             <ion-col col-3>
-                +22
+                +{{customerServiceCount}}
             </ion-col>
             <ion-col>
               Customer Service
@@ -38,10 +38,10 @@
     
         <ion-row style="font-size:20px">
             <ion-col col-1 style="margin-right:5px">
-              <ion-icon name="ios-add-circle-outline" style="color:blue"></ion-icon>
+              <ion-icon name="ios-add-circle-outline" (click)="qualityIncrement($event)"></ion-icon>
             </ion-col>
             <ion-col col-3>
-                +13
+                +{{qualityCount}}
             </ion-col>
             <ion-col>
               Quality
@@ -50,10 +50,10 @@
     
         <ion-row style="font-size:20px">
           <ion-col col-1 style="margin-right:5px">
-            <ion-icon name="ios-add-circle-outline" style="color:blue"></ion-icon>
+            <ion-icon name="ios-add-circle-outline" (click)="pricingIncrement($event)"></ion-icon>
           </ion-col>
           <ion-col col-3>
-              +9
+              +{{pricingCount}}
           </ion-col>
           <ion-col>
             Pricing
