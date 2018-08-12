@@ -8,12 +8,13 @@ import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { BusinessPage } from '../pages/business/business';
 import { MapPage } from '../pages/map/map';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = DiscoverPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

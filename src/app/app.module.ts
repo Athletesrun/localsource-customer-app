@@ -11,6 +11,7 @@ import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { BusinessPage } from '../pages/business/business';
 import { MapPage } from '../pages/map/map';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     DiscoverPage,
     BusinessPage,
-    MapPage
+    MapPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SearchPage,
     DiscoverPage,
     BusinessPage,
-    MapPage
+    MapPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

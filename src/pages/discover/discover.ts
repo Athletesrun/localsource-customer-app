@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { ProfilePage } from '../profile/profile';
 import { BusinessPage } from '../business/business'
+import { SearchPage } from '../search/search';
 
 /**
  * Generated class for the DiscoverPage page.
@@ -26,5 +29,13 @@ export class DiscoverPage {
 
   public openBusinessPage() {
     this.navCtrl.push(BusinessPage)
+  }
+
+  public openProfilePage() {
+    this.navCtrl.push(ProfilePage);
+  }
+
+  public loadSearch() {
+    this.navCtrl.push(SearchPage);
   }
 }

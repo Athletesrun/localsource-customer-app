@@ -31,6 +31,13 @@ export class SearchPage {
 
   public searchResults: object[] = [
     {
+      image: "assets/imgs/sanitas.png",
+      name: "Sanitas Brewing Co.",
+      description: "Handmade beers, crafted with organic and local ingredients",
+      latitude: 40.021483935126376,
+      longitude: -105.24737836327405
+    },
+    {
       image: "assets/imgs/logo.png",
       name: "Ice Cream Bro's",
       description: "Tasty local ice cream"
@@ -82,7 +89,7 @@ export class SearchPage {
   }
 
   public viewResultsOnMap() {
-    this.navCtrl.push(MapPage)
+    this.navCtrl.push(MapPage, this.searchResults);
   }
 
 }
