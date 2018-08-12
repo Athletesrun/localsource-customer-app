@@ -7,12 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Profile</ion-title>
+    <ion-title>Your Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-Profile
+<ion-content>
+  <div class="profile-background">
+    <div class="profileContainer">
+        <img class="profilePic" src="assets/imgs/example_profile.jpeg" alt="profile">
+    </div>
+  </div>
+  <h1 class="name">{{ profileName }}</h1>
+  <!-- <p>You are <strong>80%</strong> local.</p> -->
 </ion-content>

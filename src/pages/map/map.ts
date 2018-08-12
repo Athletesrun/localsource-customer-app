@@ -34,7 +34,7 @@ export class MapPage {
     console.log('ionViewDidLoad MapPage');
   }
 
-  ionViewDidLeave() {
+  ionViewWillUnload() {
     this.markers.forEach((marker:any) => {
       marker.element.parentNode.removeChild(marker.element);
     });
