@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Config } from 'ionic-angular';
 
 import { ProfilePage } from '../profile/profile';
-import { BusinessPage } from '../business/business'
+import { BusinessPage } from '../business/business';
+import { Business2Page } from '../business2/business2';
 import { SearchPage } from '../search/search';
 
 import { FadeTransition } from '../../transitions/fadeTransition';
@@ -36,4 +37,9 @@ export class DiscoverPage {
   public loadSearch() {
     this.navCtrl.push(SearchPage);
   }
+
+  public openBusiness2Page() {
+    this.navCtrl.push(Business2Page)
+  }
+
 }

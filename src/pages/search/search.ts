@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Config } from 'ionic-angular';
 
 import { BusinessPage } from '../business/business';
+import { Business2Page } from '../business2/business2';
 import { MapPage } from '../map/map';
 
 /**
@@ -92,6 +93,10 @@ export class SearchPage {
 
   public openBusinessPage() {
     this.navCtrl.push(BusinessPage);
+  }
+
+  public openBusiness2Page() {
+    this.navCtrl.push(Business2Page);
   }
 
   public getSuggestion(index) {
