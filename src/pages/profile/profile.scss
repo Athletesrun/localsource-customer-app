@@ -1,3 +1,26 @@
 page-profile {
+    .profile-background {
+        height: 200px;
+        width: 100%;
+        background-color: #209AA2;
+    }
 
+    .profileContainer {
+        border-radius: 100000px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .profilePic {
+        border-radius: 100000px;
+        border: 5px solid #286989;
+        width: 70%;
+    }
+
+    .name {
+        text-align: center;
+        margin: auto;
+        font-size: 40px;
+        margin-top: 90px;
+    }
 }

@@ -26,12 +26,16 @@ export class SearchPage {
   public defaultPageTransition: string = '';
 
   public searchSuggestions: string[] = [
-    'Restaurant',
+    'Restaurants',
     'Fashion',
-    'Cafe\'s',
+    'Coffee',
     'Groceries',
     'Tech',
-    'Entertainment'
+    'Fitness',
+    'Music',
+    'Home & Garden',
+    'Cannabis',
+    'Art & Gift'
   ]
 
   public searchResults: object[] = [
