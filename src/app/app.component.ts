@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SearchPage } from '../pages/search/search';
 import { DiscoverPage } from '../pages/discover/discover';
 import { BusinessPage } from '../pages/business/business';
+import { Business2Page } from '../pages/business2/business2';
 import { MapPage } from '../pages/map/map';
 import { ProfilePage } from '../pages/profile/profile';
 
