@@ -22,8 +22,8 @@ export class Business2Page {
     console.log('ionViewDidLoad Business2Page');
   }
 
-  loadLocalLove(event){
-    event.target.src = "assets/imgs/LocalLove.png";
+  public loadLocalLove(event){
+    event.target.src = "assets/imgs/real_love.png";
   }
   
 
